@@ -1,8 +1,11 @@
 language: node_js
-
 node_js:
-  - "12"
-
+- '12'
 script:
-    - npm test
-    - npm run build
+- npm test
+- npm run build
+deploy:
+  provider: heroku
+  app: emarhz
+  api_key:
+    secure: LXDWJYNQwQPtG+niyZoK51Q8BcR+P6m7YK+MJ6JaXdL6EsxplPBeHJyzGR22OlrRgpyT0VV0oZktrwb3BpsW+Arua8pafB0ufqxZ55AIpgsZEFheiS0qge9OrfW2QonFb80aiDiAv9I3nVot5MZSsUeHv0MPRrPMtRwJ2rIFoaEGU8qbNNPtsLMGif5FbeMgMt9Bh98npGY7ks4T43izKI4bqRQ6CAcqNenBYwV1k/UewpSLR98cxIQkLjxXpS1qy/4LgmzET6UlRjL7cKQg44jK3S/4iJOgb5jgqYJxmedeXPYNmnXOgc8lgL378ZJKRR1c7Yd1q0vNmBS838KlVwubStQOZSCIx0FaN9gIdTFGZhP130TCXmJaD54tcb5YsrklCg2Eo30Uw5BPfRylCXTt+ApN3uy8zNzYddW6E/BwPTR/KAXJL42VL5LzQ29v0+w3M4WzVAh3pPrPKyzjbB1zb4FNdy3r8jKz1fGDnNfNe1kcmwIawYboXgGRkaCSdkIclIvQnEwosIW7SXAm+ar1bvAa8K0rAFxOGrO3Adn2RuI1tV/CSm+t9txpfyuBMNNHnR4z7GEzv4RI4bCeD/o9e1DNQi4EBhOghlNMuC1l9QNMw7eNF5NJhHRTgbIE98f0VGAKyBJHG373AP6fR8olk/SHMHpWjHJ7S2hO3JA=
