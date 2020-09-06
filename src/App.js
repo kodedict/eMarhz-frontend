@@ -6,7 +6,8 @@ import RouterTop from './component/routerTop';
 
 //Get guest pages
 import { home,
-         cart
+         cart,
+         checkout
 } from './view/index'
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Router>
         <RouterTop/>
           <Switch>
-            <Route exact path={'/'} component={home} />
-             <Route path={'/cart'} component={cart}/>
+              <Route exact path={'/'} component={home} />
+              <Route path={'/cart'} component={cart}/>
+              <Route path={'/checkout'} component={checkout}/>
           </Switch>
       </Router>
   );
