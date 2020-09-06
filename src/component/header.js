@@ -16,10 +16,10 @@ const Header = () => {
                             </li>
                         </ul>
                         <ul className="nav navbar-nav ml-auto">
-                            <li className="nav-item" role="presentation"><a className="nav-link" href="#"><i
-                                className="material-icons">person</i></a></li>
-                            <li className="nav-item shopping-cart" role="presentation"><a className="nav-link" href="#"><i
-                                className="material-icons">shopping_cart</i><span>2</span></a></li>
+                            <li className="nav-item" role="presentation"><Link className="nav-link" to={'/'}><i
+                                className="material-icons">person</i></Link></li>
+                            <li className="nav-item shopping-cart" role="presentation"><Link className="nav-link" to={'/'}><i
+                                className="material-icons">shopping_cart</i><span>2</span></Link></li>
                         </ul>
                     </div>
                 </div>
