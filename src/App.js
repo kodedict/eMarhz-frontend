@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import RouterTop from './component/routerTop';
 
 //Get guest pages
-import { home } from './view/index'
+import { home,
+         cart
+} from './view/index'
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <RouterTop/>
           <Switch>
             <Route exact path={'/'} component={home} />
+             <Route path={'/cart'} component={cart}/>
           </Switch>
       </Router>
   );
