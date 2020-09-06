@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CartContextProvider  from './context/cartContext';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <CartContextProvider>
+
+
       <App />
-    </CartContextProvider>,
+    ,
   document.getElementById('root')
 );
 

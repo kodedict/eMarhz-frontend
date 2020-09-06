@@ -1,8 +1,8 @@
-import React, { useContext }  from 'react';
+import React  from 'react';
 import { Link } from "react-router-dom";
-import { CartContext } from './../context/cartContext';
+
 const Header = () => {
-    const { CartItem } = useContext(CartContext )
+
     return(
         <div>
             <nav className="navbar navbar-light navbar-expand-md">
@@ -21,7 +21,7 @@ const Header = () => {
                             <li className="nav-item" role="presentation"><Link className="nav-link" to={'/'}><i
                                 className="material-icons">person</i></Link></li>
                             <li className="nav-item shopping-cart" role="presentation"><Link className="nav-link" to={'/'}><i
-                                className="material-icons">shopping_cart</i><p>{CartItem}</p></Link></li>
+                                className="material-icons">shopping_cart</i><span>0</span></Link></li>
                         </ul>
                     </div>
                 </div>

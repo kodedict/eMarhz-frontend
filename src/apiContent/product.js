@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 
-import { CartContext } from './../context/cartContext';
+
 
 const ProductsContent = () => {
 
-    const { addProduct, cartItems, increase } = useContext(CartContext);
+
 
     const [product, setProduct] = useState([]);
 
@@ -43,7 +43,7 @@ const ProductsContent = () => {
                                                 <h3>{product.name}</h3>
                                                 <div className="product-price"><span>N {product.price}</span></div>
                                                 <div className="add-cart">
-                                                    <button onClick={() => addProduct(product)} className="btn btn-primary">Add to Cart</button>
+                                                    <button className="btn btn-primary">Add to Cart</button>
                                                 </div>
                                             </div>
                                         </div>
