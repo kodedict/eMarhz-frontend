@@ -24,9 +24,7 @@ const SearchForm = () => {
     }
 
     let query = function () {
-        // console.log(product)
-        
-        // const filtered = product.filter(product => Object.values(product).some(val => typeof val === "string" && val.includes(search)));
+
         const filtered = product.filter(value => (value.name).includes(search) )
         console.log(filtered);   
     }
