@@ -21,7 +21,7 @@ const Header = () => {
                         <ul className="nav navbar-nav ml-auto">
                             <li className="nav-item" role="presentation"><Link className="nav-link" to={'/'}><i
                                 className="material-icons">person</i></Link></li>
-                            <li className="nav-item shopping-cart" role="presentation"><Link className="nav-link" to={'/'}><i
+                            <li className="nav-item shopping-cart" role="presentation"><Link className="nav-link" to={'/cart'}><i
                                 className="material-icons">shopping_cart</i><span>({itemCount})</span></Link></li>
                         </ul>
                     </div>
