@@ -7,8 +7,8 @@ import React from 'react';
 import HeaderSection from './../component/header';
 
 //import Content
-// import ProductContent from '../apiContent/product';
-import SearchForm from '../apiContent/searchForm';
+
+import SearchForm from './../component/home/searchForm';
 
 import ProductContent from './../component/home/product';
 
