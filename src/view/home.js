@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 
 
 
@@ -14,13 +14,28 @@ import ProductContent from './../component/home/product';
 
 const Home = () => {
     
-    
+    const [search,setSearch] = useState('')
+    const [searchResult,setSearchResult] = useState([])
+    const [searchOFF, setSearchOFF] = useState(true)
+
+   const getSearch = (userSearch) =>{
+    setSearch(userSearch)
+    if(search !== ""){
+        setSearchOFF(false)
+    }
+   }
+
+   const getSearchResult = (SearchResult) =>{
+       setSearchResult(SearchResult)
+   }
 
     return(
         <div>
             <HeaderSection />
-            <SearchForm />
-            <ProductContent />
+            <SearchForm userSearch={getSearch} SearchResult={getSearchResult} />
+            {searchOFF? (
+                <ProductContent />
+            ) : 'notthing' }
         </div>
     )
 };

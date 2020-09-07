@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 
-const SearchForm = () => {
+const SearchForm = ({userSearch,SearchResult}) => {
 
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('')
     const [product, setProduct] = useState([])
+
+    const [searchResult, setSearchResult] = useState([])
 
     useEffect(() => {
         getSearch();
@@ -21,12 +23,15 @@ const SearchForm = () => {
         e.preventDefault();
         setSearch("");
         query()
+
+        userSearch(search)
+        SearchResult(searchResult)
     }
 
     let query = function () {
 
         const filtered = product.filter(value => (value.name).includes(search) )
-        console.log(filtered);   
+        setSearchResult(filtered)   
     }
     
 
