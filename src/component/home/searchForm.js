@@ -45,10 +45,8 @@ const SearchForm = ({userSearch, Result}) => {
 
         const filtered = product.filter(value => (value.name).includes(search) )
         setSearchResult(filtered)  
-
         
     }
-    
 
 
     return (

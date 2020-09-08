@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 
-import { usePaystackPayment, PaystackButton, PaystackConsumer } from 'react-paystack';
+import { PaystackConsumer } from 'react-paystack';
 
 import { CartContext } from './../context/cartContext'
 
@@ -9,21 +9,32 @@ import HeaderSection from './../component/header';
 
 import CartItem from './../component/cart/cartItem';
 
-
+const PAYSTACK_KEY = process.env.REACT_APP_PAYSTACK_KEY;
 
 const Cart = () => { 
 
     const { cartItems, total, itemsCount, clearCart, handleCheckout  } = useContext(CartContext);
 
-    const [email,setEmail] = useState('')
+    const [email, setEmail] = useState('')
+    const [disable, setDisable] = useState(true)
 
-    
+    // for email validation
+    function ValidateEmail(emailValue) {
+        const re = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+.)+[a-zA-Z]{2,}))$/;
+        return re.test(emailValue);
+    }
 
     const checkOut = (e) => {
       
-        // (e) => setEmail(e.target.value)
        
-        setEmail("")
+        setEmail(e.target.value)
+
+        if (ValidateEmail(email)) {
+            setDisable(false)
+        }
+        else {
+            setDisable(true)
+        }
 
         
     }
@@ -32,10 +43,8 @@ const Cart = () => {
         reference: (new Date()).getTime(),
         email: email,
         amount: `${total}00`,
-        publicKey: 'pk_test_a0e581a201b1cab387af8552f752f87cc348f85f',
+        publicKey: PAYSTACK_KEY,
     };
-
-    const initializePayment = usePaystackPayment(config);
 
     const componentProps = {
         ...config,
@@ -70,14 +79,19 @@ const Cart = () => {
                                             onChange={checkOut}
                                             required
                                         />
-                                    </div>
+                                </div>
+                                {disable?
+                                    <p className="text-danger">
+                                        <em>Kindly input correct email</em>
+                                    </p>
+                                :''}
                                     <div>
                                         <PaystackConsumer {...componentProps} >
                                             {({ initializePayment }) => <button
                                                 className="btn btn-primary"
                                                 onClick={() => initializePayment()}
                                             style={{ backgroundColor: "rgb(0,6,11)", height: "50px", width: "100%", border: "none", borderRadius: "0" }}
-                                            disabled={true}
+                                            disabled={disable}
                                                 
                                             >Pay with PayStack</button>}
                                         </PaystackConsumer>
