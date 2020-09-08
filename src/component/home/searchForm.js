@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from 'react'
 
 
-const SearchForm = ({userSearch,SearchResult}) => {
+const SearchForm = ({userSearch, Result}) => {
 
     const [search, setSearch] = useState('')
     const [product, setProduct] = useState([])
 
-    const [searchResult, setSearchResult] = useState([])
+    const [searchResult, setSearchResult] = useState("")
 
     useEffect(() => {
         getSearch();
-    },[]);
+    }, []);
+    
+    useEffect(() => {
+        fetchSearch();
+    }, [searchResult]);
+
+    const fetchSearch = () => {
+        if (searchResult !== "") {
+            
+            Result(searchResult)
+        }
+    }
 
     const getSearch = async () => {
         const response = await fetch(`http://localhost:4000/api/product`);
@@ -23,15 +34,18 @@ const SearchForm = ({userSearch,SearchResult}) => {
         e.preventDefault();
         setSearch("");
         query()
-
         userSearch(search)
-        SearchResult(searchResult)
+        
+
+        
     }
 
     let query = function () {
 
         const filtered = product.filter(value => (value.name).includes(search) )
-        setSearchResult(filtered)   
+        setSearchResult(filtered)  
+
+        
     }
     
 

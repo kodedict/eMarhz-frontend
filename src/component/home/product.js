@@ -37,7 +37,7 @@ const Product = () => {
                                     <div key={key} className="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
                                         <div className="single-product">
                                             <div className="text-center product-img-block">
-                                                <Link to={'/'}><img className="img-fluid" alt={'ss'} src="assets/img/product-37.jpg" /></Link>
+                                                <Link to={'/'}><img className="img-fluid" alt={product.name} src={product.image} /></Link>
                                             </div>
                                             <div className="text-center product-content">
                                                 <h3 className='text-capitalize'>{product.name}</h3>
