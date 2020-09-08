@@ -1,0 +1,107 @@
+.single-product {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 35px;
+}
+
+.product-img-block {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.text-center.product-content {
+  transition: all .3s ease 0s;
+}
+
+.product-content-2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #ffffff;
+  padding: 17px 10px 5px;
+}
+
+.product-content h3, .product-content-2 h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 2px 0 8px;
+}
+
+.product-price span {
+  font-size: 18px;
+  color: #000000;
+  font-family: "Heebo", sans-serif;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.add-cart button {
+  border: none;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 14px;
+  padding: 8px 28px 8px;
+  border-radius: 50px;
+  -webkit-transition: all .3s ease 0s;
+  -o-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+.single-product:hover .product-content-2 {
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.searchForm input {
+  border: 1px solid #04045b;
+  border-radius: 0;
+  height: 54px;
+}
+
+.searchForm button {
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background-color: #04045b;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.shopping-cart span {
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  line-height: 19px;
+  color: #fff;
+  text-align: center;
+  left: 14px;
+  border-radius: 50px;
+  font-weight: 600;
+  background-color: #04045b;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
