@@ -1,4 +1,4 @@
-
+/* eslint-disable react-hooks/exhaustive-deps */
 import React,{useState, useEffect} from 'react';
 
 
@@ -70,9 +70,9 @@ const Home = () => {
                                 <div className="row">
                                     <div className="col-md-12">
                                         <div className="row">
-                        {searchResult.map((data, key) => (
+                        {searchResult.map((data) => (
                             <SearchItem
-                                key={key}
+                                key={data.id}
                                 product={data}
                             />
                         ))}
