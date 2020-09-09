@@ -25,7 +25,7 @@ const SearchForm = ({userSearch, Result}) => {
     }
 
     const getSearch = async () => {
-        const response = await fetch(`http://localhost:4000/api/product`);
+        const response = await fetch(`https://emarhzapi.herokuapp.com/api/product`);
         const data = await response.json();
 
         setProduct(data.data);
